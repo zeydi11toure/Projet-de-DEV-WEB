@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Bootstrap Get Started</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="boustrap.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="Bootstrap">
+
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTCFC3S');
+
+var subjectFolder = location.pathname;
+subjectFolder = subjectFolder.replace("/", "");
+if (subjectFolder.startsWith("python/") == true ) {
+  if (subjectFolder.includes("/numpy/") == true ) {
+    subjectFolder = "numpy/"
+  } else if (subjectFolder.includes("/pandas/") == true ) {
+      subjectFolder = "pandas/"
+  } else if (subjectFolder.includes("/scipy/") == true ) {
+      subjectFolder = "scipy/"
+  }
+}
+subjectFolder = subjectFolder.substr(0, subjectFolder.indexOf("/"));
+var k42 = false;
+</script>
+<!-- End Google Tag Manager -->
+
+<script src="/lib/uic.js?v=1.0.5"></script>
+
+<script data-cfasync="false" type="text/javascript">
+var k42 = false;
+// GPT slots
+var gptAdSlots = [];
+window.googletag = window.googletag || { cmd: [] };
+  googletag.cmd.push(function() {
+    googletag.pubads().setTargeting("page_section", subjectFolder);
+
+});  
+k42 = true;
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    window.snigelPubConf = {
+    "adengine": {
+
+      "activeLots": [
+        {placement: "adngin-bottom_left-0", adUnit: "bottom_left" },
+        {placement: "adngin-bottom_right-0", adUnit: "bottom_right" },
+        {placement: "adngin-main_leaderboard-0", adUnit: "main_leaderboard" },
+        {placement: "adngin-sidebar_top-0", adUnit: "sidebar_top" },
+        {placement: "adngin-outstream-0", adUnit: "outstream" },        
+      ]
+
+  }
+}
+uic_r_a()
+</script>
+<script type='text/javascript'>
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 100) {
+      elem.style.position = "fixed";
+      elem.style.top = "100px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 100) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 100) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "100px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+<script async data-cfasync="false" src="https://cdn.snigelweb.com/adengine/w3schools.com/loader.js" type="text/javascript"></script>
+
+<script src="/lib/common-deps.js?v=1.0.5"></script>
+<script src="/lib/user-session.js?v=1.0.34"></script>
+<script src="/lib/my-learning/main.js?v=1.0.28"></script>
+
+
+<link rel="stylesheet" href="w3-fix.css">
+</head>
+<body style="background-color: aqua;">
+<div id="tnb-search-suggestions"></div>
+
+<div
+  id="top-nav-bar"
+  class="classic"
+>
+  <div
+    id="pagetop"
+    class="w3-bar notranslate w3-white"
+  >
+    <a
+      id="w3-logo"
+      href="https://www.w3schools.com"
+      class="w3-bar-item w3-button w3-hover-none w3-left ga-top ga-top-w3home"
+      title="Home"
+      style="width: 75px"
+      
+      aria-label="Home link"
+    >
+      <i
+        class="fa fa-logo ws-hover-text-green"
+        style="position: relative; z-index: 1; color: #04aa6d; font-size: 36px !important"
+        aria-hidden="true"
+      ></i>
+    </a>
+
+    <nav class="tnb-desktop-nav w3-bar-item">
+      <a
+        class="tnb-nav-btn w3-bar-item w3-button barex bar-item-hover w3-padding-16 ga-top ga-top-tut-and-ref"
+        href="javascript:void(0)"
+        onclick="TopNavBar.openNavItem('tutorials')"
+        id="navbtn_tutorials"
+        title="Tutorials and References"
+        role="button"
+      >
+
+<H1>N'DIAYA SECK DEVELOPPEUR EN IGL2</H1>
+
+<h1><span class="color_h1">COURS BOOTSTRAP</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="default.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_grid_basic.asp">Next &#10095;</a>
+</div>
+<hr>
+<h2 style="background-color: #c51515;">What is Bootstrap?</h2>
+<ul>
+  <li>Bootstrap is a free front-end framework for faster and easier web development</li>
+  <li>Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins</li>
+  <li>Bootstrap also gives you the ability to easily create responsive designs</li>
+</ul>
+<div class="w3-panel w3-note">
+<p><b>What is Responsive Web Design?</b><br><br>
+Responsive web design is about creating web sites which automatically adjust 
+themselves to look good on all devices, from small phones to large desktops.</p>
+</div>
+<div class="w3-example">
+<h3>Bootstrap Example</h3>
+<div class="w3-code notranslate htmlHigh">
+  &lt;div class=&quot;jumbotron text-center&quot;&gt;<br>&nbsp;&nbsp;&lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;<br>&nbsp; &lt;p&gt;Resize this responsive page to see the effect!&lt;/p&gt; <br>&lt;/div&gt;<br><br>&lt;div class=&quot;container&quot;&gt;<br>&nbsp; &lt;div class=&quot;row&quot;&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;div class=&quot;col-sm-4&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Column 1&lt;/h3&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Lorem ipsum 
+  dolor..&lt;/p&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>&nbsp;&nbsp;&nbsp; &lt;div class=&quot;col-sm-4&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Column 2&lt;/h3&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Lorem ipsum 
+  dolor..&lt;/p&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>&nbsp;&nbsp;&nbsp; &lt;div class=&quot;col-sm-4&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Column 3&lt;/h3&gt; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Lorem ipsum 
+  dolor..&lt;/p&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/div&gt;</div>
+<a target="_blank" href="tryit.asp?filename=trybs_default&stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a></div>
+
+<hr>
+
+<h2>Bootstrap History</h2>
+<p>Bootstrap was developed by Mark Otto and Jacob Thornton at Twitter, and released as an open source product in August 2011 on GitHub.</p>
+<p><strong>In June 2014 Bootstrap was the No.1 project on GitHub!</strong></p>
+<hr>
+
+<h2>Why Use Bootstrap?</h2>
+<p>Advantages of Bootstrap:</p>
+<ul>
+  <li><strong>Easy to use:</strong> Anybody with just basic knowledge of HTML and CSS can start using Bootstrap</li>
+  <li><strong>Responsive features:</strong> Bootstrap's responsive CSS adjusts to phones, tablets, and desktops</li>
+  <li><strong>Mobile-first approach:</strong> In Bootstrap 3, mobile-first styles are part of the core framework</li>
+  <li><strong>Browser compatibility:</strong> Bootstrap is compatible with all modern browsers (Chrome, Firefox, Internet Explorer, Edge, Safari, and Opera)</li>
+</ul>
+<hr>
+
+<h2>Bootstrap Versions</h2>
+<p>This tutorial follows <strong>Bootstrap 3</strong>, which was released in 2013. However, we also cover newer versions; <a href="/bootstrap4/default.asp">Bootstrap 4 (released 2018)</a> and <a href="/bootstrap5/index.php">Bootstrap 5 (released 2021)</a>.</p>
+<p><a href="/bootstrap5/index.php">Bootstrap 5</a> is the newest version of <a href="/bootstrap/default.asp">Bootstrap</a>; 
+with new components, faster stylesheets, more responsiveness etc. It supports the latest, stable releases of all major browsers and 
+platforms. However, Internet Explorer 11 and down is not supported.</p>
+<p>The main differences between Bootstrap 5 and Bootstrap 3 &amp; 4, is that 
+Bootstrap 5 has switched to <a href="/js/default.asp">JavaScript</a> instead of <a href="/jquery/default.asp">jQuery</a>.</p>
+<div class="w3-panel w3-note">
+<p style="margin-bottom:8px"><strong>Note:</strong> <a href="/bootstrap/default.asp">Bootstrap 3</a> and Bootstrap 4 is still supported by the team for critical bugfixes and documentation changes, 
+and it is perfectly safe to continue to use them. However, new features will NOT be added to 
+them.</p>
+</div>
+
+
+<h2>Where to Get Bootstrap?</h2>
+<p>There are two ways to start using Bootstrap on your own web site.</p>
+<p>You can:</p>
+<ul>
+  <li>Download Bootstrap from getbootstrap.com</li>
+  <li>Include Bootstrap from a CDN</li>
+</ul>
+<hr>
+
+<h2>Downloading Bootstrap</h2>
+<p>If you want to download and host Bootstrap yourself, go to
+<a href="http://getbootstrap.com/getting-started/" target="_blank">getbootstrap.com</a>, 
+and follow the instructions there.</p>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+
+<h2>Bootstrap CDN</h2>
+<p>If you don't want to download and host Bootstrap yourself, you can include it from a CDN (Content Delivery Network).</p>
+<p>MaxCDN provides CDN support for Bootstrap's CSS and JavaScript. You must also include jQuery:</p>
+<div class="w3-example">
+<h3>MaxCDN:</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;!-- Latest compiled and minified CSS --&gt;<br>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&quot;&gt;<br>
+ <br>&lt;!-- jQuery library --&gt;<br>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br>
+ <br>&lt;!-- Latest compiled JavaScript --&gt;<br>&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</div>
+</div>
+
+<div class="w3-panel w3-note">
+<p><b>One advantage of using the Bootstrap CDN:</b><br>
+Many users already have downloaded 
+Bootstrap from MaxCDN when visiting 
+another site. As a result, it will be loaded from cache when they visit your site, which leads to faster loading time. 
+Also, most CDN's will make sure that once a user requests a file from it, it will be served 
+from the server closest to them, which also leads to faster loading time.</p>
+<p><strong>jQuery</strong><br>Bootstrap uses <a href="/jquery/default.asp">jQuery</a> for JavaScript plugins (like modals, tooltips, etc). However, if you just use the 
+CSS part of Bootstrap, you don't need jQuery.</p>
+</div>
+
+<hr>
+
+<h2>Create First Web Page With Bootstrap</h2>
+<p><strong>1. Add the HTML5 doctype</strong></p>
+<p>Bootstrap uses HTML elements and CSS properties that require
+the HTML5 doctype.</p>
+<p>Always include the HTML5 doctype at the beginning of 
+the page, along with the lang attribute and the correct character set:</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&nbsp; &lt;head&gt;<br>&nbsp;&nbsp;&nbsp; &lt;meta charset=&quot;utf-8&quot;&gt; <br>&nbsp; &lt;/head&gt;<br>&lt;/html&gt;</div>
+</div>
+
+<p><strong>2. Bootstrap 3 is mobile-first</strong></p>
+<p>Bootstrap 3 is designed to be responsive to mobile devices. Mobile-first styles are 
+part of the core framework.</p>
+<p>To ensure proper rendering and touch zooming, add the following <code class="w3-codespan">&lt;meta&gt;</code> tag inside the 
+<code class="w3-codespan">&lt;head&gt;</code> element:</p>
+<div class="w3-example">
+<div class="w3-code notranslate htmlHigh">
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div>
+</div>
+
+<p>The <code class="w3-codespan">width=device-width</code> part sets the width of the page to follow the screen-width 
+of the device (which will vary depending on the device).</p>
+<p>The <code class="w3-codespan">initial-scale=1</code> part sets the initial zoom level when the page is first loaded 
+by the browser.</p>
+<p><strong>3. Containers</strong></p>
+<p>Bootstrap also requires a containing element to wrap site contents. </p>
+<p>There are two container classes to choose from:</p>
+<ol>
+  <li>The <code class="w3-codespan">.container</code> class provides a responsive <strong>fixed width container</strong></li>
+  <li>The <code class="w3-codespan">.container-fluid</code> class provides a <strong>full width container</strong>, spanning the entire width of the viewport</li>
+</ol>
+
+<div class="w3-row-padding" style="margin:16px -16px 0 -16px">
+  <div class="w3-half">
+    <div class="w3-padding w3-padding-16" style="border:4px solid #f1f1f1">
+      <div style="height:100px;width:80%;margin:auto;" class="ws-grey w3-display-container"><span class="w3-display-middle">.container</span></div>
+    </div>
+  </div>
+  <div class="w3-half">
+    <div class="w3-padding-16" style="border:4px solid #f1f1f1">
+      <div style="height:100px;width:100%;" class="ws-grey w3-center w3-display-container"><span class="w3-display-middle">.container-fluid</span></div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<h2>Two Basic Bootstrap Pages</h2>
+<p>The following example shows the code for a basic Bootstrap page (with a responsive fixed width container):</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&lt;head&gt;<br>&nbsp; &lt;title&gt;Bootstrap Example&lt;/title&gt;<br>&nbsp; &lt;meta charset=&quot;utf-8&quot;&gt;<br>&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;<br>&nbsp; &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&quot;&gt;<br>
+ &nbsp;
+ &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br>
+ &nbsp;
+ &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;<br>
+ &lt;/head&gt;<br>&lt;body&gt;<br><br>&lt;div class=&quot;container&quot;&gt;<br>&nbsp; &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;<br>&nbsp; &lt;p&gt;This is some text.&lt;/p&gt; <br>&lt;/div&gt;<br>
+ <br>&lt;/body&gt;<br>&lt;/html&gt;</div>
+<a target="_blank" href="tryit.asp?filename=trybs_gs_container&stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+
+<p>The following example shows the code for a basic Bootstrap page (with a full width container):</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ &lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;en&quot;&gt;<br>&lt;head&gt;<br>&nbsp; &lt;title&gt;Bootstrap Example&lt;/title&gt;<br>&nbsp; &lt;meta charset=&quot;utf-8&quot;&gt;<br>&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;<br>&nbsp; &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css&quot;&gt;<br>
+ &nbsp; &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br>
+ &nbsp;
+ &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br><br>&lt;div class=&quot;container-fluid&quot;&gt;<br>&nbsp; &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;<br>&nbsp; &lt;p&gt;This is some text.&lt;/p&gt; <br>&lt;/div&gt;<br>
+ <br>&lt;/body&gt;<br>&lt;/html&gt;</div>
+<a target="_blank" href="tryit.asp?filename=trybs_gs_container-fluid&stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="default.asp">&#10094; Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_grid_basic.asp">Next &#10095;</a>
+</div>
+<div
+  id="user-profile-bottom-wrapper"
+  class="user-profile-bottom-wrapper"
+>
+  <div class="user-authenticated w3-hide">
+    <a
+      href="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fmy-learning.w3schools.com"
+      class="user-profile-btn ga-bottom ga-bottom-profile"
+      title="Your W3Schools Profile"
+      aria-label="Your W3Schools Profile"
+      target="_top"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        viewBox="0 0 2048 2048"
+        class="user-profile-icon"
+        aria-label="Your W3Schools Profile Icon"
+      >
+        <path
+          d="M 843.500 1148.155 C 837.450 1148.515, 823.050 1149.334, 811.500 1149.975 C 742.799 1153.788, 704.251 1162.996, 635.391 1192.044 C 517.544 1241.756, 398.992 1352.262, 337.200 1470 C 251.831 1632.658, 253.457 1816.879, 340.500 1843.982 C 351.574 1847.431, 1696.426 1847.431, 1707.500 1843.982 C 1794.543 1816.879, 1796.169 1632.658, 1710.800 1470 C 1649.008 1352.262, 1530.456 1241.756, 1412.609 1192.044 C 1344.588 1163.350, 1305.224 1153.854, 1238.500 1150.039 C 1190.330 1147.286, 1196.307 1147.328, 1097 1149.035 C 1039.984 1150.015, 1010.205 1150.008, 950 1149.003 C 851.731 1147.362, 856.213 1147.398, 843.500 1148.155"
+          stroke="none"
+          fill="#2a93fb"
+          fill-rule="evenodd"
+        />
+        <path
+          d="M 1008 194.584 C 1006.075 194.809, 999.325 195.476, 993 196.064 C 927.768 202.134, 845.423 233.043, 786 273.762 C 691.987 338.184, 622.881 442.165, 601.082 552 C 588.496 615.414, 592.917 705.245, 611.329 760.230 C 643.220 855.469, 694.977 930.136, 763.195 979.321 C 810.333 1013.308, 839.747 1026.645, 913.697 1047.562 C 1010.275 1074.879, 1108.934 1065.290, 1221 1017.694 C 1259.787 1001.221, 1307.818 965.858, 1339.852 930.191 C 1460.375 795.998, 1488.781 609.032, 1412.581 451.500 C 1350.098 322.327, 1240.457 235.724, 1097.500 202.624 C 1072.356 196.802, 1025.206 192.566, 1008 194.584"
+          stroke="none"
+          fill="#0aaa8a"
+          fill-rule="evenodd"
+        />
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="user-progress"
+        aria-label="Your W3Schools Profile Progress"
+      >
+        <path
+          class="user-progress-circle1"
+          fill="none"
+          d="M 25.99650934151373 15.00000030461742 A 20 20 0 1 0 26 15"
+        ></path>
+        <path
+          class="user-progress-circle2"
+          fill="none"
+          d="M 26 15 A 20 20 0 0 0 26 15"
+        ></path>
+      </svg>
+
+      <span class="user-progress-star">&#x2605;</span>
+
+      <span class="user-progress-point">+1</span>
+    </a>
+  </div>
+
+  <div class="w3s-pathfinder -teaser user-anonymous w3-hide">
+  <div class="-background-image -variant-t2">&nbsp;</div>
+
+  <div class="-inner-wrapper">
+    <div class="-main-section">
+      <div class="-inner-wrapper">
+        <div class="-title">W3schools Pathfinder</div>
+
+        <div class="-headline">Track your progress - it's free!</div>
+      
+        <div class="-body">
+          <div class="-progress-bar">
+            <div class="-slider" style="width: 20%;">&nbsp;</div>    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="-right-side-section">
+      <div class="-user-session-btns">
+        <a
+          href="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fpathfinder.w3schools.com"
+          class="-login-btn w3-btn bar-item-hover w3-right ws-light-green ga-bottom ga-bottom-login"
+          title="Login to your account"
+          aria-label="Login to your account"
+          target="_top"
+        >
+          Log in
+        </a>
+
+        <a
+          href="https://profile.w3schools.com/sign-up?redirect_url=https%3A%2F%2Fpathfinder.w3schools.com"
+          class="-signup-btn w3-button w3-right ws-green ws-hover-green ga-bottom ga-bottom-signup"
+          title="Sign Up to Improve Your Learning Experience"
+          aria-label="Sign Up to Improve Your Learning Experience"
+          target="_top"
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="w3-col l2 m12" id="right">
+
+<div class="sidesection">
+  <div id="skyscraper">
+  
+    <div id="adngin-sidebar_top-0"></div>
+  
+  </div>
+</div>
+  
+<style>
+</style>
+
+<div class="sidesection" style="margin-top:20px;margin-bottom:20px;">
+<a id="upperfeatureshowcaselink" class="ga-right ga-top-fullaccess-jan" href="https://campus.w3schools.com/products/w3schools-full-access-course" target="_blank">
+<picture id="upperfeatureshowcase">
+  <source id="upperfeatureshowcase3001" srcset="/images/img_fullaccess_up_sep1_green_300.png" media="(max-width: 990px)" style="border-radius: 5px;">
+  <source id="upperfeatureshowcase120" srcset="/images/img_fullaccess_up_sep1_green_120.png" media="(max-width: 1260px)" style="border-radius: 5px;">
+  <source id="upperfeatureshowcase160" srcset="/images/img_fullaccess_up_sep1_green_160.png" media="(max-width: 1700px)" style="border-radius: 5px;">
+  <img id="upperfeatureshowcase300" src="/images/img_fullaccess_up_sep1_green_300.png" alt="Get Certified" style="width:auto;border-radius: 5px;">
+</picture>
+</a>
+</div>
+
+<div class="sidesection">
+<h4><a href="/colors/colors_picker.asp">COLOR PICKER</a></h4>
+<a href="/colors/colors_picker.asp" class="ga-right">
+<picture>
+  <source srcset="/images/colorpicker2000.webp" type="image/webp">
+  <img src="/images/colorpicker2000.png" alt="colorpicker" loading="lazy">
+</picture>
+</a>
+</div>
+
+<div class="sidesection">
+  <div class="sharethis">
+    <a href="https://www.youtube.com/@w3schools" target="_blank" title="W3Schools on YouTube"><span class="fa fa-youtube fa-2x ga-right w3-hover-text-red"></span></a>
+    <a href="https://www.linkedin.com/company/w3schools.com/" target="_blank" title="W3Schools on LinkedIn"><span class="fa fa-linkedin-square fa-2x ga-right"></span></a>
+    <a href="https://discord.gg/6Z7UaRbUQM" target="_blank" title='Join the W3schools community on Discord'><span class="fa fa-discord fa-2x ga-right"></span></a> 
+    <a href="https://www.facebook.com/w3schoolscom/" target="_blank" title="W3Schools on Facebook"><span class="fa fa-facebook-square fa-2x ga-right"></span></a>
+    <a href="https://www.instagram.com/w3schools.com_official/" target="_blank" title="W3Schools on Instagram"><span class="fa fa-instagram fa-2x ga-right"></span></a>
+  </div>
+</div>
+
+
+
+
+<div id="vidpos" class="sidesection" style="text-align:center;margin-bottom:0;height:0;">
+<div id="adngin-outstream-0"></div>
+</div>
+
+
+<div id="stickypos" class="sidesection" style="text-align:center;position:sticky;top:50px;">
+  <div id="stickyadcontainer">
+    <div style="position:relative;margin:auto;">
+      
+      <div id="adngin-sidebar_sticky-0"></div>
+        <script>
+        function secondSnigel() {
+          if(window.adngin && window.adngin.adnginLoaderReady) {
+            if (Number(w3_getStyleValue(document.getElementById("main"), "height").replace("px", "")) > 2200) {
+              if (document.getElementById("adngin-mid_content-0")) {
+                adngin.queue.push(function(){  adngin.cmd.startAuction([
+                  {placement: "adngin-sidebar_sticky-0", adUnit: "sidebar_sticky" },
+                  {placement: "adngin-mid_content-0", adUnit: "mid_content" },
+                  ]);
+                });
+              } else {
+                adngin.queue.push(function(){  adngin.cmd.startAuction([
+                  {placement: "adngin-sidebar_sticky-0", adUnit: "sidebar_sticky" },
+                  ]);
+                });
+              }
+            } else {
+              if (document.getElementById("adngin-mid_content-0")) {
+                adngin.queue.push(function(){  adngin.cmd.startAuction([
+                  {placement: "adngin-mid_content-0", adUnit: "mid_content" },
+                  ]);
+                });
+              }
+            }
+          } else {
+            window.addEventListener('adnginLoaderReady', function() {
+              if (Number(w3_getStyleValue(document.getElementById("main"), "height").replace("px", "")) > 2200) {
+                if (document.getElementById("adngin-mid_content-0")) {
+                  adngin.queue.push(function(){  adngin.cmd.startAuction([
+                    {placement: "adngin-sidebar_sticky-0", adUnit: "sidebar_sticky" },
+                    {placement: "adngin-mid_content-0", adUnit: "mid_content" },
+                    ]);
+                  });
+                } else {
+                  adngin.queue.push(function(){  adngin.cmd.startAuction([
+                    {placement: "adngin-sidebar_sticky-0", adUnit: "sidebar_sticky" },
+                    ]);
+                  });
+                }
+              } else {
+                if (document.getElementById("adngin-mid_content-0")) {
+                  adngin.queue.push(function(){  adngin.cmd.startAuction([
+                    {placement: "adngin-mid_content-0", adUnit: "mid_content" },
+                    ]);
+                  });
+                }
+              }
+            });
+          }
+        }
+      </script>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+uic_r_c()
+</script>
+
+</div>
+</div>
+<div id="footer" class="footer w3-container w3-white">
+
+<hr>
+
+<div style="overflow:auto">
+  <div class="bottomad">
+    <!-- BottomMediumRectangle -->
+    <!--<pre>bottom_medium_rectangle, all: [970,250][300,250][336,280]</pre>-->
+    <div id="adngin-bottom_left-0" style="padding:0 10px 10px 0;float:left;width:auto;"></div>
+    <!-- adspace bmr -->
+    <!-- RightBottomMediumRectangle -->
+    <!--<pre>right_bottom_medium_rectangle, desktop: [300,250][336,280]</pre>-->
+    <div id="adngin-bottom_right-0" style="padding:0 10px 10px 0;float:left;width:auto;"></div>
+  </div>
+</div>
+
+<!--<hr>-->
+
+</div>
+</body>
